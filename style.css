@@ -6,28 +6,25 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-   
+    
 }
 
 .form-container{
-    width:400px;
-    padding:40px;
-    background:#636060;
-    border-radius:15px;
-    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    background: #2d90d1;
+
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
 }
 h1{
     text-align: center;
     text-decoration: none;
-    color: white;
     border-radius: 5px;
 }
+p{
+    text-align: left;
+    font-weight: bold;
 
-.container{
-    text-align: center;
-    justify-content: center;
-    align-items:center ;
-    
 }
 
 input[type="text"],
@@ -46,7 +43,7 @@ input[type="submit"]{
     font-weight:bold;
 }
 input[type="submit"]:hover{
-    background:#011129a9;
+    background:#90a0b8a9;
     color: wheat;
 }
 
