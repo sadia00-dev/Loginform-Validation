@@ -4,8 +4,6 @@ const pass = document.getElementById("pass");
 
 const userError = document.getElementById("userError");
 const passError = document.getElementById("passError");
-const age = document.getElementById("above 18");
-const age = document.getElementById("under 18");
 
 // Form Submit Validation
 form.addEventListener("submit", function (e) {
