@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login-Form</title>
+</head>
+<body>
+    <div class="form-container">
+    <form id="loginform" action="">
+         
+     <div class="container">
+        <h1>
+            Login
+        </h1>
+        <p>Username*</p>
+         <input id="username" type="text" placeholder="Username" required><br><br>
+         <span id="userError" class="error"></span>
+       
+         <p>Password*</p>
+         <input id="pass" type="password" placeholder="Enter Password" required ><br><br>
+          <span id="passError" class="error"></span>
+        
+          <p>Age*</p>
+        <label>
+          <input type="radio" name="age" id="under18" value="under18">
+        Under 18
+        </label>
+
+        <label>
+         <input type="radio" name="age" id="above18" value="above18">
+          Above 18
+        </label>
+         <input id="btn"  type="submit" value="Login" required>
+     </div>
+    </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
