@@ -8,30 +8,31 @@
 </head>
 <body>
     <div class="form-container">
-    <form id="loginform" action="">
+    <form id="loginform" onsubmit="return validateForm()">
          
      <div class="container">
         <h1>
             Login
         </h1>
         <p>Username*</p>
-         <input id="username" type="text" placeholder="Username" required><br><br>
+         <input id="username" type="text" placeholder="Username" required><br>
          <span id="userError" class="error"></span>
        
          <p>Password*</p>
-         <input id="pass" type="password" placeholder="Enter Password" required ><br><br>
+         <input id="pass" type="password" placeholder="Enter Password" required ><br>
           <span id="passError" class="error"></span>
         
           <p>Age*</p>
         <label>
-          <input type="radio" name="age" id="under18" value="under18">
+          <input type="radio" name="age"  value="under18" required>
         Under 18
         </label>
-
+        <br>
         <label>
-         <input type="radio" name="age" id="above18" value="above18">
+         <input type="radio" name="age"  value="above18" required>
           Above 18
-        </label>
+        </label> <BR>
+
          <input id="btn"  type="submit" value="Login" required>
      </div>
     </form>

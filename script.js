@@ -5,53 +5,63 @@ const pass = document.getElementById("pass");
 const userError = document.getElementById("userError");
 const passError = document.getElementById("passError");
 
-// Form Submit Validation
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+const nameRegex = /^[A-Za-z]+$/;
 
+function validateForm() {
   let isValid = true;
 
-  // Username Check
+  // Username validation
   if (!nameRegex.test(username.value)) {
-    userError.textContent = "Numbers are not allowed.";
-
+    userError.textContent = "Only letters are allowed (no numbers).";
     username.classList.add("error-border");
     username.classList.remove("success-border");
-
     isValid = false;
+  } else {
+    userError.textContent = "";
+    username.classList.add("success-border");
+    username.classList.remove("error-border");
   }
 
-  // Password Length Check
+  // Password validation
   if (pass.value.length < 8) {
     passError.textContent = "Password must be at least 8 characters long";
-
     pass.classList.add("error-border");
     pass.classList.remove("success-border");
-
     isValid = false;
-  }
-
-  // Capital Letter Check
-  else if (!/[A-Z]/.test(pass.value)) {
-    passError.textContent = "1 Capital Letter must be included";
-
+  } else if (!/[A-Z]/.test(pass.value)) {
+    passError.textContent = "Password must include at least 1 capital letter";
     pass.classList.add("error-border");
     pass.classList.remove("success-border");
-
     isValid = false;
+  } else {
+    passError.textContent = "";
+    pass.classList.add("success-border");
+    pass.classList.remove("error-border");
   }
 
-  // Successful Login
+  // age validation
+  const ageSelected = document.querySelector('input[name="age"]:checked');
+  if (ageSelected.value === "under18") {
+    ageError.textContent = "";
+    alert("You can't login because you are under 18");
+    isValid = false;
+  } else {
+    ageError.textContent = "";
+  }
+
   if (isValid) {
     alert("Login Successful");
 
     form.reset();
 
     username.classList.remove("success-border", "error-border");
-
     pass.classList.remove("success-border", "error-border");
 
     userError.textContent = "";
     passError.textContent = "";
+
+    return false;
   }
-});
+
+  return false;
+}
